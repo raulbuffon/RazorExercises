@@ -1,0 +1,52 @@
+@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Razor Exercises</title>
+</head>
+
+<body>
+    <header>
+        <h1>Index: Topo da Pagina</h1>
+        <ul>
+            <li><a asp-page="Index">Home</a></li>
+            <li><a asp-page="Contato">Contato</a></li>
+            <li><a asp-page="Sobre">Sobre</a></li>
+        </ul>
+    </header>
+    <section>
+        <p>Secao 1</p>
+        <p>@DateTime.Now</p>
+    </section>
+    <section>
+        <p>Secao 2</p>
+
+        @{
+            var itens = new[] { "Branca", "Verde", "Vermelha" };
+            var valor = 1 + 5;
+        }
+
+        <ul>
+            @foreach (var item in itens)
+            {
+                <li>@item</li>
+            }
+        </ul>
+
+        @if(valor > 4) 
+        { 
+            <p>O Valor é maior que 4!</p>
+        }
+
+    </section>
+    <footer>
+        <h3>Rodape</h3>
+    </footer>
+</body>
+
+</html>
